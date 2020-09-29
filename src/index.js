@@ -1,70 +1,72 @@
 const http = require('http');
 const fs = require('fs');
-require("./basic_settings");
-require("./reply_setting");
-require("./special_event");
-require("./blacklist");
-require("./welcome");
-require("./屏蔽词库");
-require("./help");
-require("./jrrp");
-require("./time");
-require("./留言板");
-require("./留言内容");
-require("./hearthstone_function");
-require("./hearthstone_card");
-require("./hearthstone_card_nickname");
-require("./hearthstone_card_function");
-require("./炉石随机DIY数据库_Version_1.5");
-require("./炉石随机DIY函数库_Version_1.5");
-require("./majsoul_function");
-require("./majsoul_character");
-require("./清一色和牌型");
-require("./向听判断");
-require("./牌理分析");
-require("./切牌练习");
-require("./和牌牌理");
-require("./特殊牌型");
-require("./培养皿");
-require("./培养皿帮助");
-require("./培养皿辅助函数");
-require("./色彩收集");
-require("./色彩收集帮助");
-require("./色彩收集颜色名");
-require("./cell_war_log");
-require("./rgbc_log");
-require("./guai");
-require("./save_server");
-require("./接龙");
-require("./接龙词");
-require("./music");
-require("./musiclist");
-require("./musicrecord");
-require("./masterlist");
-require("./linear_algebra");
-require("./hscl_cost2");
-require("./hscl_cost2_name");
-require("./calculator_base");
-require("./integer_calculator");
-require("./rational_calculator");
-require("./algebraic_calculator");
-require("./rational_polynomial_calculator");
-require("./calculator_function");
-require("./setu");
-require("./setu_list");
-require("./setu_usage");
-require("./三麻上分模拟");
-require("./sm_player_status");
-require("./sm_server_result");
-require("./姬萌萌破坏");
-require("./疯狂背古诗");
-require("./abb");
-require("./策略上分");
-require("./古文献");
-require("./24dot");
-require("./fibonaci");
-require("./置换分类");
-require("./the_kth_number");
+eval("" +
+    fs.readFileSync(__dirname + './basic_settings') +
+    fs.readFileSync(__dirname + './reply_setting') +
+    fs.readFileSync(__dirname + './special_event') +
+    fs.readFileSync(__dirname + './blacklist') +
+    fs.readFileSync(__dirname + './welcome') +
+    fs.readFileSync(__dirname + './屏蔽词库') +
+    fs.readFileSync(__dirname + './help') +
+    fs.readFileSync(__dirname + './jrrp') +
+    fs.readFileSync(__dirname + './time') +
+    fs.readFileSync(__dirname + './留言板') +
+    fs.readFileSync(__dirname + './留言内容') +
+    fs.readFileSync(__dirname + './hearthstone_function') +
+    fs.readFileSync(__dirname + './hearthstone_card') +
+    fs.readFileSync(__dirname + './hearthstone_card_nickname') +
+    fs.readFileSync(__dirname + './hearthstone_card_function') +
+    fs.readFileSync(__dirname + './炉石随机DIY数据库_Version_1.5') +
+    fs.readFileSync(__dirname + './炉石随机DIY函数库_Version_1.5') +
+    fs.readFileSync(__dirname + './majsoul_function') +
+    fs.readFileSync(__dirname + './majsoul_character') +
+    fs.readFileSync(__dirname + './清一色和牌型') +
+    fs.readFileSync(__dirname + './向听判断') +
+    fs.readFileSync(__dirname + './牌理分析') +
+    fs.readFileSync(__dirname + './切牌练习') +
+    fs.readFileSync(__dirname + './和牌牌理') +
+    fs.readFileSync(__dirname + './特殊牌型') +
+    fs.readFileSync(__dirname + './培养皿') +
+    fs.readFileSync(__dirname + './培养皿帮助') +
+    fs.readFileSync(__dirname + './培养皿辅助函数') +
+    fs.readFileSync(__dirname + './色彩收集') +
+    fs.readFileSync(__dirname + './色彩收集帮助') +
+    fs.readFileSync(__dirname + './色彩收集颜色名') +
+    fs.readFileSync(__dirname + './cell_war_log') +
+    fs.readFileSync(__dirname + './rgbc_log') +
+    fs.readFileSync(__dirname + './guai') +
+    fs.readFileSync(__dirname + './save_server') +
+    fs.readFileSync(__dirname + './接龙') +
+    fs.readFileSync(__dirname + './接龙词') +
+    fs.readFileSync(__dirname + './music') +
+    fs.readFileSync(__dirname + './musiclist') +
+    fs.readFileSync(__dirname + './musicrecord') +
+    fs.readFileSync(__dirname + './masterlist') +
+    fs.readFileSync(__dirname + './linear_algebra') +
+    fs.readFileSync(__dirname + './hscl_cost2') +
+    fs.readFileSync(__dirname + './hscl_cost2_name') +
+    fs.readFileSync(__dirname + './calculator_base') +
+    fs.readFileSync(__dirname + './integer_calculator') +
+    fs.readFileSync(__dirname + './rational_calculator') +
+    fs.readFileSync(__dirname + './algebraic_calculator') +
+    fs.readFileSync(__dirname + './rational_polynomial_calculator') +
+    fs.readFileSync(__dirname + './calculator_function') +
+    fs.readFileSync(__dirname + './setu') +
+    fs.readFileSync(__dirname + './setu_list') +
+    fs.readFileSync(__dirname + './setu_usage') +
+    fs.readFileSync(__dirname + './三麻上分模拟') +
+    fs.readFileSync(__dirname + './sm_player_status') +
+    fs.readFileSync(__dirname + './sm_server_result') +
+    fs.readFileSync(__dirname + './姬萌萌破坏') +
+    fs.readFileSync(__dirname + './疯狂背古诗') +
+    fs.readFileSync(__dirname + './abb') +
+    fs.readFileSync(__dirname + './策略上分') +
+    fs.readFileSync(__dirname + './古文献') +
+    fs.readFileSync(__dirname + './24dot') +
+    fs.readFileSync(__dirname + './fibonaci') +
+    fs.readFileSync(__dirname + './置换分类') +
+    fs.readFileSync(__dirname + './the_kth_number')
+)
 const server = http.createServer(
     (req, res) => {
         let data = '';
