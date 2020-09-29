@@ -1,6 +1,6 @@
 const http = require('http');
 const fs = require('fs');
-eval("" +
+eval(
     fs.readFileSync(__dirname + '/basic_settings.js') +
     fs.readFileSync(__dirname + '/reply_setting.js') +
     fs.readFileSync(__dirname + '/special_event.js') +
@@ -65,8 +65,8 @@ eval("" +
     fs.readFileSync(__dirname + '/24dot.js') +
     fs.readFileSync(__dirname + '/fibonaci.js') +
     fs.readFileSync(__dirname + '/置换分类.js') +
-    fs.readFileSync(__dirname + '/the_kth_number')
-)
+    fs.readFileSync(__dirname + '/the_kth_number.js') +
+    "")
 const server = http.createServer(
     (req, res) => {
         let data = '';
