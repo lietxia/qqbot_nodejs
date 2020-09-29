@@ -1,72 +1,77 @@
 const http = require('http');
 const fs = require('fs');
-eval(
-    fs.readFileSync(__dirname + '/basic_settings.js') +
-    fs.readFileSync(__dirname + '/reply_setting.js') +
-    fs.readFileSync(__dirname + '/special_event.js') +
-    fs.readFileSync(__dirname + '/blacklist.js') +
-    fs.readFileSync(__dirname + '/welcome.js') +
-    fs.readFileSync(__dirname + '/屏蔽词库.js') +
-    fs.readFileSync(__dirname + '/help.js') +
-    fs.readFileSync(__dirname + '/jrrp.js') +
-    fs.readFileSync(__dirname + '/time.js') +
-    fs.readFileSync(__dirname + '/留言板.js') +
-    fs.readFileSync(__dirname + '/留言内容.js') +
-    fs.readFileSync(__dirname + '/hearthstone_function.js') +
-    fs.readFileSync(__dirname + '/hearthstone_card.js') +
-    fs.readFileSync(__dirname + '/hearthstone_card_nickname.js') +
-    fs.readFileSync(__dirname + '/hearthstone_card_function.js') +
-    fs.readFileSync(__dirname + '/炉石随机DIY数据库_Version_1.5.js') +
-    fs.readFileSync(__dirname + '/炉石随机DIY函数库_Version_1.5.js') +
-    fs.readFileSync(__dirname + '/majsoul_function.js') +
-    fs.readFileSync(__dirname + '/majsoul_character.js') +
-    fs.readFileSync(__dirname + '/清一色和牌型.js') +
-    fs.readFileSync(__dirname + '/向听判断.js') +
-    fs.readFileSync(__dirname + '/牌理分析.js') +
-    fs.readFileSync(__dirname + '/切牌练习.js') +
-    fs.readFileSync(__dirname + '/和牌牌理.js') +
-    fs.readFileSync(__dirname + '/特殊牌型.js') +
-    fs.readFileSync(__dirname + '/培养皿.js') +
-    fs.readFileSync(__dirname + '/培养皿帮助.js') +
-    fs.readFileSync(__dirname + '/培养皿辅助函数.js') +
-    fs.readFileSync(__dirname + '/色彩收集.js') +
-    fs.readFileSync(__dirname + '/色彩收集帮助.js') +
-    fs.readFileSync(__dirname + '/色彩收集颜色名.js') +
-    fs.readFileSync(__dirname + '/cell_war_log.js') +
-    fs.readFileSync(__dirname + '/rgbc_log.js') +
-    fs.readFileSync(__dirname + '/guai.js') +
-    fs.readFileSync(__dirname + '/save_server.js') +
-    fs.readFileSync(__dirname + '/接龙.js') +
-    fs.readFileSync(__dirname + '/接龙词.js') +
-    fs.readFileSync(__dirname + '/music.js') +
-    fs.readFileSync(__dirname + '/musiclist.js') +
-    fs.readFileSync(__dirname + '/musicrecord.js') +
-    fs.readFileSync(__dirname + '/masterlist.js') +
-    fs.readFileSync(__dirname + '/linear_algebra.js') +
-    fs.readFileSync(__dirname + '/hscl_cost2.js') +
-    fs.readFileSync(__dirname + '/hscl_cost2_name.js') +
-    fs.readFileSync(__dirname + '/calculator_base.js') +
-    fs.readFileSync(__dirname + '/integer_calculator.js') +
-    fs.readFileSync(__dirname + '/rational_calculator.js') +
-    fs.readFileSync(__dirname + '/algebraic_calculator.js') +
-    fs.readFileSync(__dirname + '/rational_polynomial_calculator.js') +
-    fs.readFileSync(__dirname + '/calculator_function.js') +
-    fs.readFileSync(__dirname + '/setu.js') +
-    fs.readFileSync(__dirname + '/setu_list.js') +
-    fs.readFileSync(__dirname + '/setu_usage.js') +
-    fs.readFileSync(__dirname + '/三麻上分模拟.js') +
-    fs.readFileSync(__dirname + '/sm_player_status.js') +
-    fs.readFileSync(__dirname + '/sm_server_result.js') +
-    fs.readFileSync(__dirname + '/姬萌萌破坏.js') +
-    fs.readFileSync(__dirname + '/疯狂背古诗.js') +
-    fs.readFileSync(__dirname + '/abb.js') +
-    fs.readFileSync(__dirname + '/策略上分.js') +
-    fs.readFileSync(__dirname + '/古文献.js') +
-    fs.readFileSync(__dirname + '/24dot.js') +
-    fs.readFileSync(__dirname + '/fibonaci.js') +
-    fs.readFileSync(__dirname + '/置换分类.js') +
-    fs.readFileSync(__dirname + '/the_kth_number.js') +
-    "")
+function read(f) {
+    return fs.readFileSync(f).toString();
+}
+function include(f) {
+    eval.apply(global, [read(f)]);
+}
+include('/basic_settings.js');
+include('/reply_setting.js');
+include('/special_event.js');
+include('/blacklist.js');
+include('/welcome.js');
+include('/屏蔽词库.js');
+include('/help.js');
+include('/jrrp.js');
+include('/time.js');
+include('/留言板.js');
+include('/留言内容.js');
+include('/hearthstone_function.js');
+include('/hearthstone_card.js');
+include('/hearthstone_card_nickname.js');
+include('/hearthstone_card_function.js');
+include('/炉石随机DIY数据库_Version_1.5.js');
+include('/炉石随机DIY函数库_Version_1.5.js');
+include('/majsoul_function.js');
+include('/majsoul_character.js');
+include('/清一色和牌型.js');
+include('/向听判断.js');
+include('/牌理分析.js');
+include('/切牌练习.js');
+include('/和牌牌理.js');
+include('/特殊牌型.js');
+include('/培养皿.js');
+include('/培养皿帮助.js');
+include('/培养皿辅助函数.js');
+include('/色彩收集.js');
+include('/色彩收集帮助.js');
+include('/色彩收集颜色名.js');
+include('/cell_war_log.js');
+include('/rgbc_log.js');
+include('/guai.js');
+include('/save_server.js');
+include('/接龙.js');
+include('/接龙词.js');
+include('/music.js');
+include('/musiclist.js');
+include('/musicrecord.js');
+include('/masterlist.js');
+include('/linear_algebra.js');
+include('/hscl_cost2.js');
+include('/hscl_cost2_name.js');
+include('/calculator_base.js');
+include('/integer_calculator.js');
+include('/rational_calculator.js');
+include('/algebraic_calculator.js');
+include('/rational_polynomial_calculator.js');
+include('/calculator_function.js');
+include('/setu.js');
+include('/setu_list.js');
+include('/setu_usage.js');
+include('/三麻上分模拟.js');
+include('/sm_player_status.js');
+include('/sm_server_result.js');
+include('/姬萌萌破坏.js');
+include('/疯狂背古诗.js');
+include('/abb.js');
+include('/策略上分.js');
+include('/古文献.js');
+include('/24dot.js');
+include('/fibonaci.js');
+include('/置换分类.js');
+include('/the_kth_number.js');
+
 const server = http.createServer(
     (req, res) => {
         let data = '';
