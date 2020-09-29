@@ -1,5 +1,6 @@
 const http = require('http');
 const fs = require('fs');
+require("./basic_settings");
 const server = http.createServer(
     (req, res) => {
         let data = '';
