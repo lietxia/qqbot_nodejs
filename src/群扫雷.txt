@@ -1,0 +1,174 @@
+Ms_dict=[]
+Ms_id_dict=[]
+Amount=["〇","①","②","③","④","⑤","⑥","⑦","⑧"]
+data.user_id=1
+
+/function 开始扫雷(a,b,c)
+{
+	if(a>9||b>9||c>a*b||a<1||b<1||c<0||a!=Math.floor(a)||b!=Math.floor(b)||c!=Math.floor(c))
+		return "战场不符合要求呢！大小不能超过9*9，雷数不能超过战场大小哦！"
+	Ms_id_dict.push(data.user_id)
+	id=Ms_id_dict.indexOf(data.user_id)
+	row=[]
+	emptyfield=[]
+	for(i=0;i<a;++i)
+		row.push(false)
+	for(i=0;i<b;++i)
+		emptyfield.push(row)
+	Ms_dict[id]={"message":[a,b,c,0,-1,-1],"field":emptyfield, "show":emptyfield, "mark":emptyfield}
+	return "欢迎来到小夕子的扫雷乐园！\n" + put_mines(id,a,b,c) + show(id)
+}
+
+/function sort_pair(a,b)
+{
+	return a[1]-b[1]
+}
+
+/function put_mines(id,a,b,c)
+{
+	row=[]
+	for(i=0;i<a*b;++i)
+		row.push([i,Math.random()])
+	row.sort(sort_pair)
+	for(i=0;i<c;++i)
+	{
+		x=Math.floor(row[i][0]/a)
+		y=row[i][0]-x*a
+		Ms_dict[id]["field"][x][y]=true
+	}
+	return "新的战场已生成！\n"
+}
+
+/* 符号①②③④⑤⑥⑦⑧▼▲エ㊣㐃〇口 */
+
+/function show(id)
+{
+	a=Ms_dict[id]["message"][0]
+	b=Ms_dict[id]["message"][1]
+	str=""
+	for(i=0;i<a;++i)
+	{
+		for(j=0;j<b;++j)
+			str+=show_check(Ms_dict[id],i,j,a,b)
+		str+="\n"
+	}
+	return str + "当前剩余雷数:" + (Ms_dict[id]["message"][2]-Ms_dict[id]["message"][3]) + (Ms_dict[id]["message"][2]<Ms_dict[id]["message"][3]?"？":"。")
+}
+
+/function show_check(dict_id,i,j,a,b)
+{
+	if(dict_id["show"][i][j])
+		{if(dict_id["field"][i][j])
+			{if(!(i!=dict_id["message"][4]||j!=dict_id["message"][5]))
+				return "▲"
+			else
+				return "㐃"}
+		else
+			return Amount[check_amount(dict_id["field"],i,j,a,b)]}
+	else
+		{if(dict_id["mark"][i][j])
+			return "㊣"
+		else
+			return "口"}
+}
+
+/function check_amount(field,i,j,a,b)
+{
+	amount=0
+	for(x=-1;x<=1;++x)
+		for(y=-1;y<=1;++y)
+			if(!(x+i<0||x+i>=a||y+j<0||y+j>=b||(x*x+y*y)==0||!field[i][j]))
+				++amount
+	return amount
+}
+
+/function 插旗(i,j)
+{
+	id=Ms_id_dict.indexOf(data.user_id)
+	if(id<0)
+		return "你的游戏没有开始或已经结束了哦！请输入“开始扫雷(宽，高，雷数)”开始你的游戏呢！"
+	if(i<0||j<0||i>=Ms_dict[id]["message"][0]||j>=Ms_dict[id]["message"][1]||i!=Math.floor(i)||j!=Math.floor(j))
+		return "你的坐标不存在哦！\n" + show(id)
+	Ms_dict[id]["mark"][i][j]=true
+	return "插旗完成！\n" + show(id)
+}
+
+/function 拔旗(i,j)
+{
+	id=Ms_id_dict.indexOf(data.user_id)
+	if(id<0)
+		return "你的游戏没有开始或已经结束了哦！请输入“开始扫雷(宽，高，雷数)”开始你的游戏呢！"
+	if(i<0||j<0||i>=Ms_dict[id]["message"][0]||j>=Ms_dict[id]["message"][1]||i!=Math.floor(i)||j!=Math.floor(j))
+		return "你的坐标不存在哦！\n" + show(id)
+	Ms_dict[id]["mark"][i][j]=false
+	return "拔旗完成！\n" + show(id)
+}
+
+/function 踩(i,j)
+{
+	id=Ms_id_dict.indexOf(data.user_id)
+	if(id<0)
+		return "你的游戏没有开始或已经结束了哦！请输入“开始扫雷(宽，高，雷数)”开始你的游戏呢！"
+	if(i<0||j<0||i>=Ms_dict[id]["message"][0]||j>=Ms_dict[id]["message"][1]||i!=Math.floor(i)||j!=Math.floor(j)||Ms_dict[id]["mark"][i][j]||Ms_dict[id]["show"][i][j])
+	return basic_check(id,i,j) + show(id)
+	if(Ms_dict[id]["field"][i][j])
+	{
+		Ms_dict[id]["message"][4]=i
+		Ms_dict[id]["message"][5]=j
+		return  result_game(id) + show(id) + end_game(id)
+	}
+	open(id,i,j)
+	return "这块地被踩软啦！\n" +  check_win(id)
+}
+
+/function basic_check(id,i,j)
+{
+	if(i<0||j<0||i>=Ms_dict[id]["message"][0]||j>=Ms_dict[id]["message"][1]||i!=Math.floor(i)||j!=Math.floor(j))
+		return "你的坐标不存在哦！\n"
+	if(Ms_dict[id]["mark"][i][j])
+		return "这里有旗子哦，太硬了，踩不动呢！\n"
+	if(Ms_dict[id]["show"][i][j])
+		return "这里已经踩过了呢，已经软了哦！\n"
+}
+
+/function result_game(id)
+{
+	for(i=0;i<Ms_dict[id]["message"][0];++i)
+		for(j=0;j<Ms_dict[id]["message"][1];++j)
+			if(Ms_dict[id]["field"][i][j])
+				Ms_dict[id]["show"][i][j]=true
+	return "嘭！踩爆啦，你输啦！\n"
+}
+
+/function end_game(id)
+{
+	Ms_dict[id]=null
+	Ms_id_dict.splice(id,1)
+	return ""
+}
+
+/function open(id,i,j)
+{
+	if(Ms_dict[id]["show"][i][j])
+		return 0
+	Ms_dict[id]["show"][i][j]=true
+	if(check_amount(Ms_dict[id]["field"],i,j,Ms_dict[id]["message"][0],Ms_dict[id]["message"][1])==0)
+		for(x=-1;x<=1;++x)
+			for(y=-1;y<=1;++y)
+				if((x*x+y*y)!=0)
+					open(id,i+x,j+y)
+	return 0
+}
+
+/function check_win(id)
+{
+	for(i=0;i<Ms_dict[id]["message"][0];++i)
+		for(j=0;j<Ms_dict[id]["message"][1];++j)
+			if(!(Ms_dict[id]["field"][i][j]||Ms_dict[id]["show"][i][j]))
+				return show(id)
+	for(i=0;i<Ms_dict[id]["message"][0];++i)
+		for(j=0;j<Ms_dict[id]["message"][1];++j)
+			if(Ms_dict[id]["field"][i][j])
+				Ms_dict[id]["mark"][i][j]=true
+	return "恭喜你把能踩的地全都踩软啦！\n" + show(id) + end_game(id)
+}

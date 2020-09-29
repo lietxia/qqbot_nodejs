@@ -1,0 +1,107 @@
+致新来的玩家(一)联盟基本介绍
+相信大家对游戏都有了初步的认识。作为联盟的盟主，我很高兴认识大家，愿意带领大家共同发展，营造良好的游戏体验。咱们联盟是一个混杂的联盟，特点是门槛低，面向所有玩家，没有语言限制。咱们联盟内有各国的玩家，常见的语言包括汉语、日语和英语。因此我发布通知通常会三种语言各发一遍。咱们联盟幸运地落在350服务器中，这是个非常棒的服务器。欢迎大家的到来，请继续阅读《致新来的玩家(二)》。
+
+致新来的玩家(二)服务器基本介绍
+本着和谐相处共同发展的原则，咱们服务器有一个《平日不战协定》。协定如下：
+1. 每周一到周六期间，严格禁止任何对他人的基地或设施的攻击；
+2. 每周日的最强司令官分数请在内圈地区(首都周围的一圈)找玩家刷，圈外禁止发生战斗，除非双方约定好；
+3. 每两天有一次补给争夺，补给运输车是可以攻击的，也是仅有的日常战斗。
+这三条务必牢记，千万不要触犯。补给争夺和最强司令官请阅读《致新来的玩家(四)》查看具体内容。
+
+致新来的玩家(三)快速发展
+无论是新玩家还是老玩家，随着游戏的更新，发展思路和方法都会有变化。我总结一些常见的小技巧：
+1. 钱(黄金)是这个游戏最重要和缺乏的资源。游戏经验完全是从钱转化而来的(20%的比率)。因此，在同等条件下，钱一定是最优先要获得的物资。常见的获得大钱的方法包括每日的国税收缴(最大头)，每日10次钻石换钱机会，红色钱箱。这三种方法获得的数额和等级与矿场数量相关。请务必保证自己持有至少20个矿场使得当前等级获得钱最大化。
+2. 消费体力作战是获得钱以外物资的主要方法。每半个小时会补充5体力，一个小时会补充10体力。尽量围绕着体力恢复安排好一天的作息和游戏时间。同时尽量多参与联盟的集结，从大家那里蹭物资。发动集结时请投入自己的最大战力以保证战斗的胜利。参与集结时则尽量投入最小的战力减少战力占位，留一些位置给联盟里的其它玩家一起参加，这样大家都能获得更多的物资。
+3. 每日任务是获得一类特殊物资的重要获取方法。前期尽量想尽一切办法提升自己的军衔，尽量完成需要的等级任务并留下足够的军票升级。任务等级会随着军衔提高而提升。等到能刷出红色任务后，就可以用多余的军票去军团商店换取需要的特殊物资了。特殊物资有哪些请阅读《致新来的玩家(五)》查看具体内容。
+4. 收入和资源有很大的比例是通过服务器里的活动来获得的。大家要积极参与各种活动，提前规划好可以参加的时间。具体的常见活动请阅读《致新来的玩家(四)》查看具体内容。
+P.S. 新玩家尽量想办法快速升级到30级，这样可以多一支可行动的部队。
+
+致新来的玩家(四)常见的活动
+这个游戏有以下这些常见的活动:
+1. 最强司令官。这是一个每日活动，每天都要按照要求完成任务，可以点击活动界面右上的叹号查看详情。除了周日的任务外，其它的任务尽量多刷一些，提升自己的排名来获得奖励。
+2. 补给争夺。这是一个两日一次的活动，每两天服务器的元首会决定一次补给争夺时间，这个服务器通常安排在服务器时间(+8时区)的上午或下午9:00。期间，大家尽量抢夺飞机头下来的橙色和蓝色补给，可以适当争抢其他联盟的运输车。获得的补给可以换成钱箱和其它有用的东西。
+3. 兵器大作战。这是每周一和周二的活动。通过高级招募来获得大量的子弹抽奖来获得奖励。因此高级招募券平时尽量积攒，尽量都用在这一活动里。
+4. 世界之宝。这是每周六和周日的活动。如果你不是氪金玩家，可以在每周六和周日消费30钻石获得超额奖励。
+5. 发射塔占领。这是每周二的活动。每周二可以注意我在联盟里发的消息安排参与时间来获得奖励。
+6. 越境首都争夺战。这是每两周一次的周日活动。60级及以上玩家可以在服务器时间(+8时区)上午10:00穿越到对手服务器参与战斗。不到60级的可以在自己服务器的两个塔里防守，共同击退入侵者。
+P.S. 周日的最强司令官有种方便的不触犯协议的刷法。单周可以参与补给争夺抢夺补给完成，双周可以参与越境首都争夺战和对手服务器交战完成。
+
+致新来的玩家(五)物资用途
+有些物资前期玩家用不到，所以可能大家有些疑惑。但是这些还是要提前开始收集的:
+1. 各种升级科技的物资。这个不用说，游戏开始就有用，大家自然了解。
+2. 石油和玉米。用于升级专业科技和兵种。在30级之后会解锁兵种相互克制的科技条并选择自己的游戏专业(机械和战斗两种)，石油和玉米要尽量提前囤积用于这些科技的升级。
+3. 齿轮或战斗标签。用于升级自己的专业科技。机械师需要齿轮，战斗师需要战斗标签。这两种特殊物资可以在军团商店获得，每天能够获得3个。决定好自己的专业方向后就要快点提前开始收集哦。
+4. 矿石。用于合成兵种升级装备。战斗的胜负全靠这些装备了。
+5. 设施。各种基地内设施可以buff自己的部队和生产。通常来说，三合一后buff收益会降低。所以一般攒到最大生效上限后再进行三合一。
+
+
+
+
+新しく来たプレイヤー（一）リーグの基本を紹介します。
+みんなはゲームに対して初歩的な認識があると信じています。連盟の盟主として、皆様とお会いすることができてとても嬉しいです。私たちの同盟は混じり合った同盟で、敷居が低いのが特徴です。すべてのプレイヤーに向けて、言語の制限がありません。私たちの連盟には各国のプレイヤーがいます。よくある言語は中国語、日本語、英語が含まれています。ですから、私は通知を出します。通常3つの言語でそれぞれ送ります。私達の連盟は幸い350サーバーに落ちました。これは素晴らしいサーバです。ようこそいらっしゃいました。
+新しく来たプレイヤー（二）サーバーの基本を紹介します。
+調和がとれている付き合いの共同発展の原則に基づいて、私達のサーバーは《平日に戦わない協定》があります。協定は以下の通りである
+1.毎週月曜日から土曜日にかけて、他人の基地や施設に対する攻撃を厳しく禁じます。
+2.毎週日曜日の最強司令官点数は内輪地区（首都周辺の一周）でプレーヤーを探してください。圏外で戦闘が発生することを禁止します。
+3.二日間に一回の補給争いがあります。輸送車の補給は攻撃可能で、日常の戦いだけです。
+この三つの条は必ず覚えておき，決して触れるな。補給争いと最強司令官は、「新たなプレイヤーへ」を読んで内容を確認してください。
+新しく来たプレイヤーへ(三)急速に発展します。
+新しいプレイヤーも古いプレイヤーも、ゲームの更新によって、考え方や方法が変わります。よくあるテクニックをまとめます。
+1.お金（黄金）はこのゲームの最も重要で不足している資源です。ゲーム経験は完全にお金から転化してきました。したがって、同じ条件の下で、お金は必ず一番優先的に獲得するものです。よくある大金の獲得方法は毎日の国税の徴収（一番いい部分）を含み、毎日10回のダイヤ両替機会、赤い箱です。この3つの方法で得られた量と等級は鉱場の数に関連している。少なくとも20の鉱場を持っていることで、現在の等級が最大化されることを必ず保証してください。
+2.消費体力作戦はお金以外の物資を獲得する主な方法です。半時間ごとに5体力を補い、一時間で10体力を補います。できるだけ体力回復をめぐって一日の仕事と遊びの時間を決めます。また、できるだけ多くの連盟の結集に参加して、みんなから物資を擦ります。集結する時は自分の最大戦力を投入して戦いの勝利を確保してください。集结に参加するときは、できるだけ戦力を最小にして戦力の位置を减らし、连盟内の他のプレイヤーと一绪に参加することで、より多くの物资を得ることができます。
+3.毎日の任務は特殊物資の重要な獲得方法である。前の段階はできるだけあらゆる方法で自分のランクを上げ、必要な等級任務を達成し、十分な軍チケットを残してアップグレードします。ミッションレベルは、レベルアップとともに向上します。赤色のクエストをクリアしたら、余分な軍団チケットで軍団商店に必要な特殊物資と交換できます。特殊物資にはどのようなものがありますか？
+4.収入と資源の大きな割合はサーバー内の活動を通じて得られます。みんなは積極的に各種の活動に参加して、事前に参加できる時間を計画します。具体的によくあるイベントは、「新来のプレイヤーへ」を読んで、具体的な内容を確認してください。
+P.S.新プレーヤーはできるだけ早く30級にアップグレードして、行動できる部隊をもう一本増やすことができます。
+新しく来たプレーヤー（四）によくある活動を送ります。
+このゲームには以下のような一般的なイベントがあります。
+1.最強司令官。これは毎日の活動です。毎日要求通りに任務を完成します。活動画面の右上の感嘆符をクリックして詳細を調べます。日曜日の任務以外にも、できるだけ多くの仕事をして、自分のランキングを上げて、ご褒美をもらいます。
+2.補給争い。これは二日に一回のイベントです。サーバーの元首は二日間に一回の補給争奪時間を決めます。このサーバーは通常サーバー時間（+8時区）の午前か午後9時に手配します。その間、飛行機から降りてくるオレンジ色と青の補給をできるだけ奪い取って、他の連盟の輸送車を適当に奪い合うことができます。与えられた補給は箱や他の有用なものに変えられます。
+3.兵器大作戦。これは毎週月曜日と火曜日のイベントです。高级募集により大量の弾丸抽选で奖励を受けた。そのため、高級応募券は普段からできるだけ積み立てて、できるだけこのイベントに使うようにしています。
+4.世界の宝。これは毎週土曜日と日曜日のイベントです。クリプトンゴールドプレイヤーでなければ、毎週土曜日と日曜日に30ダイヤモンドを消費して超過報酬を得ることができます。
+5.発射塔占領。これは毎週火曜日のイベントです。毎週火曜日に連盟で送ったメッセージに注目して参加時間を決めて報酬をもらうことができます。
+6.越境首都争奪戦。これは2週に1回の日曜日のイベントです。60級以上のプレイヤーはサーバー時間（+8時区）の午前10時に相手サーバにタイムスリップして戦闘に参加できます。六十級以下の者は自分のサーバーの二つの塔で守備し、共に侵入者を撃退します。
+P.S.日曜日の最強司令官は契約に違反しない便利なブラシがあります。一週間で補給の争奪戦に参加できます。二週間で越境首都争奪戦に参加して相手サーバと交戦します。
+新しく来たプレイヤー（五）への物資用途
+一部の物資は前の段階ではプレイヤーが使えないので、皆さんはちょっと迷っているかもしれません。しかし、これらは事前に収集を開始します。
+1.各種のアップグレード技術の物資。これは言うまでもないですが、ゲームを始めると役に立つので、自然に分かります。
+2.石油とトウモロコシ。専門の科学技術と兵種をアップグレードするのに使います。レベル30では、兵器のロックを解除して、お互いに克制する科学技術のバーを解除して、自分のゲーム専門（機械と戦闘の2種類）を選択します。石油とトウモロコシはできるだけ早めにこれらの技術のアップグレードに使うために買いだめします。
+3.ギアまたは戦闘ラベル。自分の専門技術をアップグレードするのに使います。マシニストは歯車が必要で、戦闘師は戦闘ラベルが必要です。この二つの特殊物資は軍団商店で獲得できます。毎日3つを獲得できます。自分の専門の方向を決めたら、早く収集を始めましょう。
+4.鉱石。兵種を合成して装備をアップグレードするのに使います。戦闘の勝負はこれらの装備にかかっています。
+5.施設。各種の基地内施設は自分の部隊と生産ができます。通常、三合一後のbuffの収益は減少します。ですから、通常は有効上限まで集めて三合一を行います。
+
+
+
+
+To the new players (I) alliance introduction
+
+I believe everyone has a preliminary understanding of the game. As the leader of the alliance, I'm very happy to meet you, and I'm willing to lead you to develop together and to enjoy a good game experience. Our alliance is a mixed party, characterized by limited restriction, welcoming all players, and with no language restrictions. There are players from all over the world in our alliance. The main languages include Chinese, Japanese and English. So I usually send notices in the three languages. Our alliance is lucky to be on 350 servers, which is a great server. Welcome your join. Please continue to read "to the new player (II)".
+
+To the new players (II) server introduction
+
+1. Strictly prohibit any attack on other people's bases or facilities from Monday to Saturday;
+2. For the strongest commander's score every Sunday, please find players to brush in the inner circle area (a circle around the capital). No fighting is allowed outside the circle unless agreed by both parties;
+3. There is a supply fight every two days. The supply transport vehicle can attack and is the only daily battle.
+
+To the new players (III) development
+Whether new players or old players, with the update of the game, the development ideas and methods will change. I summarize some common tips:
+1. Money (gold) is the most important and scarce resource of the game. Game experience is all about money (20%). Therefore, under the same conditions, money must be the most preferred material. Common ways to get big money include daily state tax collection (maximum), 10 diamond exchange opportunities per day, and red money box. The amounts and grades obtained by these three methods are related to the number of mines. Make sure you own at least 20 mines to maximize your current level of money.
+2. The main way to obtain materials other than money is to consume physical combat. Every half an hour will add 5 physical strength, an hour will add 10 physical strength. Try to arrange a day's work, rest and play time around physical recovery. At the same time, try to participate in the assembly of the alliance as much as possible, and scrape materials from everyone. When launching the rally, please input your maximum combat power to ensure the victory of the battle. When participating in the rally, we try to put in the minimum combat power to reduce the occupation of the battle power, and leave some positions for other players in the League to participate, so that everyone can get more materials.
+P. S. new players try to find a way to quickly upgrade to level 30, so that they can have an additional mobile force.
+
+To new players (IV) common activities
+This game has the following common activities:
+1. The best commander. This is a daily activity. You should complete the task as required every day. You can click the exclamation mark on the right of the activity interface to view the details. In addition to Sunday's tasks, other tasks should be swiped as much as possible to improve their ranking to get rewards.
+2. Supply fight. This is a two-day event. Every two days, the head of the server decides to fight for the supply time. This server is usually arranged at 9:00 a.m. or 9:00 p.m. of the server time (+ 8 time zone). During this period, we will try our best to grab the orange and blue supplies from the aircraft, and we can appropriately scramble for the transport vehicles of other alliances. The supplies obtained can be exchanged for money boxes and other useful things.
+3. Weapons battle. It's Monday and Tuesday every week. Get a lot of bullet Raffles through advanced recruitment to get awards. Therefore, senior recruitment vouchers are usually accumulated as much as possible and used in this activity as much as possible.
+4. The treasure of the world. It's a Saturday and Sunday activity. If you're not a krypton gold player, you can spend 30 diamonds a week on Saturday and Sunday to get extra rewards.
+5. Launch tower occupation. This is every Tuesday. On Tuesday, I can pay attention to the messages I send in the league and arrange the time for participation to get rewards.
+6. Cross border capital battle. It's a fortnightly Sunday event. Players of level 60 and above can cross to the opponent's server to participate in the battle at 10:00 a.m. in server time (+ 8 time zone). Those less than 60 can defend in two towers of their own servers and repel intruders together.
+P. S. Sunday's top commander has a convenient way of not breaking the agreement. One week can participate in the supply fight and complete the supply snatch, and two weeks can participate in the cross-border capital fight and complete the opponent server fight.
+
+To the new players (V) game items
+Some materials are not available to players in the early stage, so you may have some doubts. However, the collection should be started in advance:
+1. Materials for upgrading science and technology. Needless to say, the game is useful at the beginning, so you can understand it naturally.
+2. Oil and corn. Used to upgrade professional technology and arms. After level 30, it will unlock the technology bar of mutual restraint of arms and choose its own game specialty (both mechanical and combat). Oil and corn should be stored as early as possible for upgrading these technologies.
+3. Gear or battle tag. Used to upgrade their own professional technology. Machinists need gears, fighters need battle tags. These two kinds of special materials can be obtained in the Army store, and three can be obtained every day. After you decide your professional direction, you should start collecting in advance as soon as possible.
+4. Ore. It is used for upgrading equipment of synthetic arms. The battle depends on these equipment.
+5. Facilities. Various facilities in the base can buff their own troops and production. Generally speaking, after three in one, buff revenue will decrease. Therefore, the three in one is generally carried out after the maximum effective limit is reached.

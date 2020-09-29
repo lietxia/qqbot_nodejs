@@ -1,0 +1,14 @@
+total_amount=0;
+cell_health_list=[];
+cell_status=[];
+user_dict={};
+cell_dict={};
+miss_chance=8.79999999999999;
+damage_decrease_ratio=9.90000000000001;
+damage_decrease_trend=0.55;
+miss_chance_trend=0.48;
+reproduce_rate=7.299999999999989;
+reproduce_rate_trend=0.6;
+restore_rate=7.599999999999974;
+restore_rate_trend=0.4;
+environment_talent=2;
