@@ -74,13 +74,19 @@ const server = http.createServer(
         req.on('end', async () => {
             console.log(data);
             data = JSON.parse(data);
-            reply_text = await reply_from(data);
-            event_url = await special_event_url(data);
-            if (data.post_type == "message")
-                res.end(JSON.stringify({ "reply": reply_text, "at_sender": at_from(data) }));
-            else
-				/*await get_data(event_url)*/res.end();
-        })
+            if (data.post_type == "message") {
+                try {
+                    reply_text = await reply_from(data);
+                    event_url = await special_event_url(data);
+                    return res.end(JSON.stringify({ "reply": reply_text, "at_sender": at_from(data) }));
+                } catch (error) {
+                    console.log(error);
+                    res.end();
+                }
+
+            }
+            res.end();
+        });
     }
 )
 
