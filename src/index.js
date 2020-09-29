@@ -43,7 +43,8 @@ get_data = async (url) => {
                 let rawData = '';
                 res.on('data', (chunk) => { rawData += chunk; });
                 res.on('end', () => {
-                    parsedData = JSON.parse(rawData); console.log(JSON.stringify(parsedData));
+                    parsedData = JSON.parse(rawData);
+                    console.log(JSON.stringify(parsedData));
                     resolve(parsedData);
                 });
             });
