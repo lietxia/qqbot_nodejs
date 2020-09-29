@@ -65,11 +65,11 @@ restart_time = Date.now();
 //sm_clear_ID=setInterval(sm_restart,60000);
 //clearInterval(sm_clear_ID);
 
-//jmm_bad_ID = setInterval(jmm_bad_func, 30000);
+jmm_bad_ID = setInterval(jmm_bad_func, 30000);
 
 //clearInterval(jmm_bad_ID);
 
-//auto_restart_ID = setInterval(check_restart, 300000);
+auto_restart_ID = setInterval(check_restart, 300000);
 
 //clearInterval(auto_restart_ID);
 //mikase_ID=setInterval(()=>{http.get("http://127.0.0.1:5700/send_group_msg?group_id=534360827&&message=投票 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色");},1000)
