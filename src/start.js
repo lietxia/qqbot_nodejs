@@ -1,65 +1,65 @@
-.load basic_settings.js
-.load reply_setting.js
-.load special_event.js
-.load blacklist.js
-.load welcome.js
-.load 屏蔽词库.js
-.load help.js
-.load jrrp.js
-.load time.js
-.load 留言板.js
-.load 留言内容.js
-.load hearthstone_function.js
-.load hearthstone_card.js
-.load hearthstone_card_nickname.js
-.load hearthstone_card_function.js
-.load 炉石随机DIY数据库_Version_1.5.js
-.load 炉石随机DIY函数库_Version_1.5.js
-.load majsoul_function.js
-.load majsoul_character.js
-.load 清一色和牌型.js
-.load 向听判断.js
-.load 牌理分析.js
-.load 切牌练习.js
-.load 和牌牌理.js
-.load 特殊牌型.js
-.load 培养皿.js
-.load 培养皿帮助.js
-.load 培养皿辅助函数.js
-.load 色彩收集.js
-.load 色彩收集帮助.js
-.load 色彩收集颜色名.js
-.load cell_war_log.js
-.load rgbc_log.js
-.load guai.js
-.load save_server.js
-.load 接龙.js
-.load 接龙词.js
-.load music.js
-.load musiclist.js
-.load musicrecord.js
-.load masterlist.js
-.load linear_algebra.js
-.load hscl_cost2.js
-.load hscl_cost2_name.js
-.load calculator_base.js
-.load integer_calculator.js
-.load rational_calculator.js
-.load algebraic_calculator.js
-.load rational_polynomial_calculator.js
-.load calculator_function.js
-.load setu.js
-.load setu_list.js
-.load setu_usage.js
-.load 三麻上分模拟.js
-.load sm_player_status.js
-.load sm_server_result.js
-.load 姬萌萌破坏.js
-.load 疯狂背古诗.js
-.load abb.js
-.load 策略上分.js
-.load 古文献.js
-.load 24dot.js
-.load fibonaci.js
-.load 置换分类.js
-.load the_kth_number.js
+require("./basic_settings");
+require("./reply_setting");
+require("./special_event");
+require("./blacklist");
+require("./welcome");
+require("./屏蔽词库");
+require("./help");
+require("./jrrp");
+require("./time");
+require("./留言板");
+require("./留言内容");
+require("./hearthstone_function");
+require("./hearthstone_card");
+require("./hearthstone_card_nickname");
+require("./hearthstone_card_function");
+require("./炉石随机DIY数据库_Version_1.5");
+require("./炉石随机DIY函数库_Version_1.5");
+require("./majsoul_function");
+require("./majsoul_character");
+require("./清一色和牌型");
+require("./向听判断");
+require("./牌理分析");
+require("./切牌练习");
+require("./和牌牌理");
+require("./特殊牌型");
+require("./培养皿");
+require("./培养皿帮助");
+require("./培养皿辅助函数");
+require("./色彩收集");
+require("./色彩收集帮助");
+require("./色彩收集颜色名");
+require("./cell_war_log");
+require("./rgbc_log");
+require("./guai");
+require("./save_server");
+require("./接龙");
+require("./接龙词");
+require("./music");
+require("./musiclist");
+require("./musicrecord");
+require("./masterlist");
+require("./linear_algebra");
+require("./hscl_cost2");
+require("./hscl_cost2_name");
+require("./calculator_base");
+require("./integer_calculator");
+require("./rational_calculator");
+require("./algebraic_calculator");
+require("./rational_polynomial_calculator");
+require("./calculator_function");
+require("./setu");
+require("./setu_list");
+require("./setu_usage");
+require("./三麻上分模拟");
+require("./sm_player_status");
+require("./sm_server_result");
+require("./姬萌萌破坏");
+require("./疯狂背古诗");
+require("./abb");
+require("./策略上分");
+require("./古文献");
+require("./24dot");
+require("./fibonaci");
+require("./置换分类");
+require("./the_kth_number");
