@@ -1,12 +1,12 @@
 const http = require('http');
 const fs = require('fs');
 const server = http.createServer(
-	(req, res)=>{
+	(req, res) => {
 		let data = '';
-		req.on('data', (chunk)=>{
+		req.on('data', (chunk) => {
 			data += chunk;
 		})
-		req.on('end', async ()=>{
+		req.on('end', async () => {
 			console.log(data);
 			res.end();
 		})

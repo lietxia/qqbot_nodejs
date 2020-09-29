@@ -1,1 +1,1 @@
-guai_count=[34,18529]
+guai_count = [34, 18529]

@@ -515,7 +515,7 @@ var SYANTEN = { // singleton
         if (e.n_toitsu) {
             n_mentsu_kouho += e.n_toitsu - 1;
         } else if (e.f_n4 && e.f_koritsu) {
-            if ((e.f_n4 | e.f_koritsu) == e.f_n4)++ret_syanten; // 対子を作成できる孤立牌が無い
+            if ((e.f_n4 | e.f_koritsu) == e.f_n4) ++ret_syanten; // 対子を作成できる孤立牌が無い
         }
         if (n_mentsu_kouho > 4) ret_syanten += (n_mentsu_kouho - 4);
         if (ret_syanten != -1 && ret_syanten < e.n_jidahai) ret_syanten = e.n_jidahai;
@@ -540,7 +540,7 @@ var SYANTEN = { // singleton
         var c = this.c;
         if (n == 136) {
             for (n = 0; n < 136; ++n)
-                if (a[n])++c[n >> 2];
+                if (a[n]) ++c[n >> 2];
         } else if (n == 34) {
             for (n = 0; n < 34; ++n) c[n] = a[n];
         } else {
@@ -642,7 +642,7 @@ var SYANTEN = { // singleton
                 j_koritsu |= (1 << (i - 27));
                 break;
         }
-        if (e.n_jidahai && (nc % 3) == 2)--e.n_jidahai;
+        if (e.n_jidahai && (nc % 3) == 2) --e.n_jidahai;
 
         if (j_koritsu) { // 孤立牌が存在する
             e.f_koritsu |= (1 << 27);
@@ -683,7 +683,7 @@ var SYANTEN = { // singleton
                 j_koritsu |= (1 << i);
                 break;
         }
-        if (e.n_jidahai && (nc % 3) == 2)--e.n_jidahai;
+        if (e.n_jidahai && (nc % 3) == 2) --e.n_jidahai;
 
         if (j_koritsu) { // 孤立牌が存在する
             e.f_koritsu |= (1 << 27);
