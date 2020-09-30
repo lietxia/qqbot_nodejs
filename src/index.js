@@ -14,7 +14,7 @@ const server = http.createServer(
                 try {
                     reply_text = await reply_from(data);
                     //event_url = await special_event_url(data);
-                    return res.end((reply == "") ? null :
+                    return res.end((reply_text == "") ? null :
                         JSON.stringify({
                             "reply": reply_text,
                             //"at_sender": at_from(data)
