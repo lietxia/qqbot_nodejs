@@ -1,0 +1,14 @@
+{
+  "name": "qqbot-nodejs",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">   <a href=\"https://nodejs.org/\">     <img       alt=\"Node.js\"       src=\"https://nodejs.org/static/images/logo-light.svg\"       width=\"400\"     />   </a> </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.6.1"
+  }
+}
