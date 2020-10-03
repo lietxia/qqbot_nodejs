@@ -383,7 +383,18 @@ async function reply_from(data) {
     if (data.raw_message.startsWith("开始功能棋") ||
         data.raw_message.startsWith("開始功能棋")) {
         //if (data.sub_type != "group") { return "只能群聊" }
-        xiangqi.data[data.group_id] = Array.from(xiangqi.data[0]);
+        xiangqi.data[data.group_id] = [
+            [3, 4, 5, 6, 7, 6, 5, 4, 3],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 2, 0, 0, 0, 0, 0, 2, 0],
+            [1, 0, 1, 0, 1, 0, 1, 0, 1],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [8, 0, 8, 0, 8, 0, 8, 0, 8],
+            [0, 9, 0, 0, 0, 0, 0, 9, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [10, 11, 12, 13, 14, 13, 12, 11, 10]
+        ];
         return xiangqi.show(data.group_id);
     }
     if (data.raw_message.startsWith("qp") ||
