@@ -174,22 +174,41 @@ var xiangqi = {
             [0, 0, 0, 0, 0, 0, 0, 0, 0],
             [8, 0, 8, 0, 8, 0, 8, 0, 8],
             [0, 9, 0, 0, 0, 0, 0, 9, 0],
-            [0, [2, 4], [13, 12, 1], [13, 12, 1, 2], [3, 12, 1, 2, 8], [13, 12, 1, 2, 3, 4], [14, 1, 2, 3, 4, 5, 6], 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
             [10, 11, 12, 13, 14, 13, 12, 11, 10]
         ]
     }
 }
 
-xiangqi.black = function (fx, fy, tx, ty) {
-    if (!xiangqi.data.hasOwnProperty(group_id)) {
-        xiangqi.data[group_id] = xiangqi.data[0];
-    }
-}
 
-xiangqi.red = function (fx, fy, tx, ty) {
+xiangqi.move = function (rowtext = "", group_id) {
+    rowtext = rowtext.toUpperCase();
+    var arr = rowtext.match(/^(GNQ|功能棋)\s*([A-I])\s*(\d)\s*([a-i])\s*(\d)/);
+    if (arr === null) { return "錯誤的輸入\n正確示例：\ngnq a1a2"; }
+    var fx = "abcdefghi".indexOf(arr[2]),
+        fy = arr[3],
+        tx = "abcdefghi".indexOf(arr[4]),
+        ty = arr[5];
     if (!xiangqi.data.hasOwnProperty(group_id)) {
         xiangqi.data[group_id] = xiangqi.data[0];
     }
+    var d = Array.from(xiangqi.data[group_id]);
+    if (d[fy][fx] === 0) { return "這沒有棋子"; }
+    if (d[ty][tx] === 0) {//目標是空位
+        d[ty][tx] = d[fy][fx];
+    } else {//目標有棋子
+        var thisarr = (typeof d[fy][fx] == "number") ?
+            [d[fy][fx]] : Array.from(d[fy][fx]);
+        if (typeof d[ty][tx] == "number") {
+            thisarr.push(d[ty][tx]);
+        } else {
+            thisarr.push(d[ty][tx][0]);
+        }
+        d[ty][tx] = thisarr;
+    }
+    d[fy][fx] = 0;
+    xiangqi.data[group_id] = d;
+    return xiangqi.show(group_id)
 }
 
 xiangqi.show = function (group_id) {
@@ -354,8 +373,19 @@ const server = http.createServer(
 server.listen(80);
 async function reply_from(data) {
     if (data.post_type != "message") { return; }
-    if (data.raw_message.startsWith("象棋")) {
+    if (data.raw_message.startsWith("开始功能棋") ||
+        data.raw_message.startsWith("開始功能棋")) {
         //if (data.sub_type != "group") { return "只能群聊" }
+        xiangqi.data[data.group_id] = xiangqi.data[0];
         return xiangqi.show(data.group_id);
+    }
+    if (data.raw_message.startsWith("qp") ||
+        data.raw_message.startsWith("棋盤") ||
+        data.raw_message.startsWith("棋盘")) {
+        return xiangqi.show(data.group_id);
+    }
+    if (data.raw_message.startsWith("gnq") ||
+        data.raw_message.startsWith("功能棋")) {
+        return xiangqi.move(data.raw_message, data.group_id);
     }
 }
