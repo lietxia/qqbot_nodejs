@@ -183,8 +183,8 @@ var xiangqi = {
 
 xiangqi.move = function (rowtext, group_id) {
     rowtext = rowtext.toUpperCase();
-    var arr = rowtext.match(/(GNQ|功能棋)\s*([A-I])\s*(\d)\s*([A-I])\s*(\d)/);
-    if (arr === null) { return "錯誤的輸入\n正確示例：\ngnq a1a2"; }
+    var arr = rowtext.match(/([A-I])\s*(\d)\s*([A-I])\s*(\d)/);
+    if (arr === null) { return "錯誤的輸入\n正確示例：\nyd a0a1"; }
     var fx = "ABCDEFGHI".indexOf(arr[2]),
         fy = arr[3],
         tx = "ABCDEFGHI".indexOf(arr[4]),
@@ -200,11 +200,17 @@ xiangqi.move = function (rowtext, group_id) {
     } else {//目標有棋子
         var thisarr = (typeof d[fy][fx] == "number") ?
             [d[fy][fx]] : Array.from(d[fy][fx]);
-        if (typeof d[ty][tx] == "number") {
-            thisarr.push(d[ty][tx]);
-        } else {
-            thisarr.push(d[ty][tx][0]);
+        var from_is_red = thisarr[0] >= 8 ? true : false;
+        var target = (typeof d[ty][tx] == "number") ?
+            d[ty][tx] : d[ty][tx][0];
+        if ((target >= 8 && from_is_red) ||
+            (target < 8 && from_is_red === false)) {
+            return "你不能吃掉你自己的棋子";
         }
+        thisarr.push(target);
+        thisarr[0] = (from_is_red) ? thisarr[0] - 7 : thisarr[0] + 7;
+        thisarr = [...new Set(thisarr)];
+        thisarr[0] = (from_is_red) ? thisarr[0] + 7 : thisarr[0] - 7;
         d[ty][tx] = thisarr;
     }
     d[fy][fx] = 0;
@@ -385,8 +391,9 @@ async function reply_from(data) {
         data.raw_message.startsWith("棋盘")) {
         return xiangqi.show(data.group_id);
     }
-    if (data.raw_message.startsWith("gnq") ||
-        data.raw_message.startsWith("功能棋")) {
+    if (data.raw_message.startsWith("yd") ||
+        data.raw_message.startsWith("移动") ||
+        data.raw_message.startsWith("移動")) {
         return xiangqi.move(data.raw_message, data.group_id);
     }
 }
