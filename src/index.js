@@ -181,9 +181,9 @@ var xiangqi = {
 }
 
 
-xiangqi.move = function (rowtext = "", group_id) {
+xiangqi.move = function (rowtext, group_id) {
     rowtext = rowtext.toUpperCase();
-    var arr = rowtext.match(/^(GNQ|功能棋)\s*([A-I])\s*(\d)\s*([a-i])\s*(\d)/);
+    var arr = rowtext.match(/(GNQ|功能棋)\s*([A-I])\s*(\d)\s*([A-I])\s*(\d)/);
     if (arr === null) { return "錯誤的輸入\n正確示例：\ngnq a1a2"; }
     var fx = "abcdefghi".indexOf(arr[2]),
         fy = arr[3],
