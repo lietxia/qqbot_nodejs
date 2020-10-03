@@ -165,15 +165,12 @@ async function get_data(url) {
 async function reply_from(data) {
     if (data.post_type != "message") { return; }
     if (data.raw_message.startsWith("象棋")) {
-        return xiangqi();
+        if (data.sub_type != "group") { return "只能群聊" }
+        return xiangqi(data.group_id);
     }
 }
-
-function xiangqi() {
-    const canvas = createCanvas(600, 600)
-    const ctx = canvas.getContext('2d')
-
-    var d = [
+var xiagnqidata = {
+    0: [
         [3, 4, 5, 6, 7, 6, 5, 4, 3],
         [0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 2, 0, 0, 0, 0, 0, 2, 0],
@@ -184,13 +181,21 @@ function xiangqi() {
         [0, 9, 0, 0, 0, 0, 0, 9, 0],
         [0, [2, 4], [13, 12, 1], [13, 12, 1, 2], [3, 12, 1, 2, 8], [13, 12, 1, 2, 3, 4], [14, 1, 2, 3, 4, 5, 6], 0, 0],
         [10, 11, 12, 13, 14, 13, 12, 11, 10]
-    ];
+    ]
+};
+
+
+function xiangqi(group_id) {
+    const canvas = createCanvas(600, 600)
+    const ctx = canvas.getContext('2d')
+
+    var d = xiangqidata[group_id];
     var names = [null,
         "卒", "砲", "車", "馬", "象", "士", "將",
         "兵", "炮", "俥", "傌", "相", "仕", "帥",
     ];
     //底色
-    ctx.fillStyle = "rgb(228, 180, 141)"
+    ctx.fillStyle = "rgb(223, 201, 162)"
     ctx.fillRect(0, 0, 600, 600);
 
     var start_x = 100,
