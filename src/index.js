@@ -317,12 +317,12 @@ function xiangqi() {
 
 const server = http.createServer(
     (req, res) => {
-        let data = '';
+        var data = '';
         req.on('data', (chunk) => {
             data += chunk;
         })
         req.on('end', async () => {
-            var data = JSON.parse(data);
+            data = JSON.parse(data);
             if (data.post_type == "message") {
                 try {
                     var reply_text = await reply_from(data);
