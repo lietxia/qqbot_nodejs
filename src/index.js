@@ -185,10 +185,10 @@ xiangqi.move = function (rowtext, group_id) {
     rowtext = rowtext.toUpperCase();
     var arr = rowtext.match(/([A-I])\s*(\d)\s*([A-I])\s*(\d)/);
     if (arr === null) { return "錯誤的輸入\n正確示例：\nyd a0a1"; }
-    var fx = "ABCDEFGHI".indexOf(arr[2]),
-        fy = arr[3],
-        tx = "ABCDEFGHI".indexOf(arr[4]),
-        ty = arr[5];
+    var fx = "ABCDEFGHI".indexOf(arr[1]),
+        fy = arr[2],
+        tx = "ABCDEFGHI".indexOf(arr[3]),
+        ty = arr[4];
     if (!xiangqi.data.hasOwnProperty(group_id)) {
         xiangqi.data[group_id] = xiangqi.data[0];
     }
