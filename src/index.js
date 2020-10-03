@@ -193,7 +193,7 @@ xiangqi.move = function (rowtext, group_id) {
         xiangqi.data[group_id] = xiangqi.data[0];
     }
     var d = Array.from(xiangqi.data[group_id]);
-    console.log("xq\n", d);
+    //console.log("xq\n", d);
     if (d[fy][fx] === 0) { return "這沒有棋子"; }
     if (d[ty][tx] === 0) {//目標是空位
         d[ty][tx] = d[fy][fx];
