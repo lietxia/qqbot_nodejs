@@ -166,10 +166,11 @@ async function reply_from(data) {
     if (data.post_type != "message") { return; }
     if (data.raw_message.startsWith("象棋")) {
         if (data.sub_type != "group") { return "只能群聊" }
-        return xiangqi(data.group_id);
+        return xiangqi.show(data.group_id);
     }
 }
-var xiagnqidata = {
+var xiangqi = {};
+xiagnqi.data = {
     0: [
         [3, 4, 5, 6, 7, 6, 5, 4, 3],
         [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -184,12 +185,25 @@ var xiagnqidata = {
     ]
 };
 
+xiangqi.black = function (fx, fy, tx, ty) {
+    if (!xiangqi.data.hasOwnProperty(group_id)) {
+        xiangqi.data[group_id] = xiangqi.data[0];
+    }
+}
 
-function xiangqi(group_id) {
+xiangqi.red = function (fx, fy, tx, ty) {
+    if (!xiangqi.data.hasOwnProperty(group_id)) {
+        xiangqi.data[group_id] = xiangqi.data[0];
+    }
+}
+
+xiangqi.show = function (group_id) {
     const canvas = createCanvas(600, 600)
     const ctx = canvas.getContext('2d')
-
-    var d = xiangqidata[group_id];
+    if (!xiangqi.data.hasOwnProperty(group_id)) {
+        xiangqi.data[group_id] = xiangqi.data[0];
+    }
+    var d = xiangqi.data[group_id];
     var names = [null,
         "卒", "砲", "車", "馬", "象", "士", "將",
         "兵", "炮", "俥", "傌", "相", "仕", "帥",
@@ -232,14 +246,14 @@ function xiangqi(group_id) {
         "楚　河　　　　　漢　界",
         (start_x + end_x) / 2, (start_y + end_y) / 2
     );
-
+    var htxt = "ABCDEFGHIJKLMN";
     for (var i = 0; i < count_x; i++) {
         //横向文字
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
-        ctx.fillText(i, start_x + i * inc, end_y + text);
+        ctx.fillText(htxt[i], start_x + i * inc, end_y + text);
         ctx.textBaseline = "bottom";
-        ctx.fillText(i, start_x + i * inc, start_y - text);
+        ctx.fillText(htxt[i], start_x + i * inc, start_y - text);
 
         //竖直线条
         ctx.beginPath();
