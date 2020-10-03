@@ -185,15 +185,15 @@ xiangqi.move = function (rowtext, group_id) {
     rowtext = rowtext.toUpperCase();
     var arr = rowtext.match(/(GNQ|功能棋)\s*([A-I])\s*(\d)\s*([A-I])\s*(\d)/);
     if (arr === null) { return "錯誤的輸入\n正確示例：\ngnq a1a2"; }
-    var fx = "abcdefghi".indexOf(arr[2]),
+    var fx = "ABCDEFGHI".indexOf(arr[2]),
         fy = arr[3],
-        tx = "abcdefghi".indexOf(arr[4]),
+        tx = "ABCDEFGHI".indexOf(arr[4]),
         ty = arr[5];
     if (!xiangqi.data.hasOwnProperty(group_id)) {
         xiangqi.data[group_id] = xiangqi.data[0];
     }
     var d = Array.from(xiangqi.data[group_id]);
-    console.log("xq\n",d);
+    console.log("xq\n", d);
     if (d[fy][fx] === 0) { return "這沒有棋子"; }
     if (d[ty][tx] === 0) {//目標是空位
         d[ty][tx] = d[fy][fx];
