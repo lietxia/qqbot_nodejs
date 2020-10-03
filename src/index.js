@@ -311,8 +311,7 @@ function xiangqi() {
 
         }
     }
-
-    return "[CQ:image,file=" + canvas.toDataURL() + "]"
+    return "[CQ:image,file=base64://" + canvas.toDataURL().substr(22) + "]"
 }
 
 const server = http.createServer(
