@@ -170,7 +170,7 @@ async function reply_from(data) {
 }
 
 function xiangqi() {
-    const canvas = createCanvas(1000, 1000)
+    const canvas = createCanvas(600, 600)
     const ctx = canvas.getContext('2d')
 
     var d = [
