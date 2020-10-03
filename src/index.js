@@ -163,35 +163,36 @@ async function get_data(url) {
 }
 
 
-global.xiangqi = {}
-global.xiagnqi.data = {
-    0: [
-        [3, 4, 5, 6, 7, 6, 5, 4, 3],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 2, 0, 0, 0, 0, 0, 2, 0],
-        [1, 0, 1, 0, 1, 0, 1, 0, 1],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [8, 0, 8, 0, 8, 0, 8, 0, 8],
-        [0, 9, 0, 0, 0, 0, 0, 9, 0],
-        [0, [2, 4], [13, 12, 1], [13, 12, 1, 2], [3, 12, 1, 2, 8], [13, 12, 1, 2, 3, 4], [14, 1, 2, 3, 4, 5, 6], 0, 0],
-        [10, 11, 12, 13, 14, 13, 12, 11, 10]
-    ]
-};
+var xiangqi = {
+    data: {
+        0: [
+            [3, 4, 5, 6, 7, 6, 5, 4, 3],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 2, 0, 0, 0, 0, 0, 2, 0],
+            [1, 0, 1, 0, 1, 0, 1, 0, 1],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [8, 0, 8, 0, 8, 0, 8, 0, 8],
+            [0, 9, 0, 0, 0, 0, 0, 9, 0],
+            [0, [2, 4], [13, 12, 1], [13, 12, 1, 2], [3, 12, 1, 2, 8], [13, 12, 1, 2, 3, 4], [14, 1, 2, 3, 4, 5, 6], 0, 0],
+            [10, 11, 12, 13, 14, 13, 12, 11, 10]
+        ]
+    }
+}
 
-global.xiangqi.black = function (fx, fy, tx, ty) {
+xiangqi.black = function (fx, fy, tx, ty) {
     if (!xiangqi.data.hasOwnProperty(group_id)) {
         xiangqi.data[group_id] = xiangqi.data[0];
     }
 }
 
-global.xiangqi.red = function (fx, fy, tx, ty) {
+xiangqi.red = function (fx, fy, tx, ty) {
     if (!xiangqi.data.hasOwnProperty(group_id)) {
         xiangqi.data[group_id] = xiangqi.data[0];
     }
 }
 
-global.xiangqi.show = function (group_id) {
+xiangqi.show = function (group_id) {
     const canvas = createCanvas(600, 600)
     const ctx = canvas.getContext('2d')
     if (!xiangqi.data.hasOwnProperty(group_id)) {
@@ -355,6 +356,6 @@ async function reply_from(data) {
     if (data.post_type != "message") { return; }
     if (data.raw_message.startsWith("象棋")) {
         if (data.sub_type != "group") { return "只能群聊" }
-        return global.xiangqi.show(data.group_id);
+        return xiangqi.show(data.group_id);
     }
 }
