@@ -1,8 +1,8 @@
 const http = require('http');
 const fs = require('fs');
 
-const { createCanvas, loadImage } = require('canvas')
-
+const { registerFont, createCanvas, loadImage } = require('canvas')
+registerFont('SourceHanSansSC-Regular-min.ttf', { family: 'SourceHanSansSC' })
 
 /*
 function read(f) {
@@ -218,8 +218,9 @@ function xiangqi() {
     ctx.lineTo(start_x + 3 * inc, end_y);//3，9
     ctx.closePath();
     ctx.stroke();
+    var han = "SourceHanSansSC";
 
-    ctx.font = "25px Sans-serif"
+    ctx.font = "25px " + han;
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ctx.fillText(
@@ -287,13 +288,13 @@ function xiangqi() {
             ctx.textBaseline = "middle";
             ctx.textAlign = "center";
             ctx.fillStyle = 'white';
-            ctx.font = "25px Sans-serif"
+            ctx.font = "25px " + han;
             if (typeof thisdata === "object") {
-                ctx.font = size[thisdata.length] + "px Sans-serif"
+                ctx.font = size[thisdata.length] + "px " + han;
                 var txt = thisdata.map(function (x) { return names[x]; }).join("");
                 if (thisdata.length >= 3) {
                     if (thisdata.length >= 7) {
-                        ctx.font = size[2] + "px Sans-serif"
+                        ctx.font = size[2] + "px " + han;
                         ctx.fillText(names[thisdata[0]] + "全", this_x, this_y);
                         continue;
                     }
