@@ -162,13 +162,7 @@ async function get_data(url) {
     return parsedData;
 }
 
-async function reply_from(data) {
-    if (data.post_type != "message") { return; }
-    if (data.raw_message.startsWith("象棋")) {
-        if (data.sub_type != "group") { return "只能群聊" }
-        return xiangqi.show(data.group_id);
-    }
-}
+
 var xiangqi = {};
 xiagnqi.data = {
     0: [
@@ -357,3 +351,10 @@ const server = http.createServer(
     }
 )
 server.listen(80);
+async function reply_from(data) {
+    if (data.post_type != "message") { return; }
+    if (data.raw_message.startsWith("象棋")) {
+        if (data.sub_type != "group") { return "只能群聊" }
+        return xiangqi.show(data.group_id);
+    }
+}
