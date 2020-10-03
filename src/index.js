@@ -190,7 +190,7 @@ xiangqi.move = function (rowtext, group_id) {
         tx = "ABCDEFGHI".indexOf(arr[3]),
         ty = arr[4];
     if (!xiangqi.data.hasOwnProperty(group_id)) {
-        xiangqi.data[group_id] = xiangqi.data[0];
+        xiangqi.data[group_id] = Array.from(xiangqi.data[0]);
     }
     var d = Array.from(xiangqi.data[group_id]);
     //console.log("xq\n", d);
@@ -222,7 +222,7 @@ xiangqi.show = function (group_id) {
     const canvas = createCanvas(600, 600)
     const ctx = canvas.getContext('2d')
     if (!xiangqi.data.hasOwnProperty(group_id)) {
-        xiangqi.data[group_id] = xiangqi.data[0];
+        xiangqi.data[group_id] = Array.from(xiangqi.data[0]);
     }
     var d = xiangqi.data[group_id];
     var names = [null,
