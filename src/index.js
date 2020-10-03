@@ -1,5 +1,10 @@
 const http = require('http');
 const fs = require('fs');
+
+const { createCanvas, loadImage } = require('canvas')
+
+
+/*
 function read(f) {
     return fs.readFileSync(f).toString();
 }
@@ -103,7 +108,33 @@ const server = http.createServer(
 
 //else await get_data(await special_event_url(data));
 
-get_data = async (url) => {
+
+
+server.listen(80);
+restart_time = Date.now();
+//clearInterval(server_saved);
+//server_saved=setInterval(save_server,60000);
+//clearInterval(cell_turn_move);
+//cell_turn_move=setInterval(do_turn_cell,5000);
+//https://cqhttp.cc/docs/
+//sm_match_ID=setInterval(sm匹配,Math.ceil((sm_match_speed*1000)/sm_rank_list.length));
+//clearInterval(sm_match_ID);
+//sm_clear_ID=setInterval(sm_clear_log,600000);
+//clearInterval(sm_clear_ID);
+//sm_clear_ID=setInterval(sm_restart,60000);
+//clearInterval(sm_clear_ID);
+
+jmm_bad_ID = setInterval(jmm_bad_func, 30000);
+
+//clearInterval(jmm_bad_ID);
+
+auto_restart_ID = setInterval(check_restart, 300000);
+
+//clearInterval(auto_restart_ID);
+//mikase_ID=setInterval(()=>{http.get("http://127.0.0.1:5700/send_group_msg?group_id=534360827&&message=投票 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色");},1000)
+//clearInterval(mikase_ID);
+*/
+async function get_data(url) {
     var parsedData;
     await new Promise((resolve) => {
         if (url.startsWith("https"))
@@ -131,26 +162,179 @@ get_data = async (url) => {
     return parsedData;
 }
 
+async function reply_from(data) {
+    if (data.post_type != "message") { return; }
+    if (data.raw_message.startsWith("象棋")) {
+        return xiangqi();
+    }
+}
+
+function xiangqi() {
+    const canvas = createCanvas(1000, 1000)
+    const ctx = canvas.getContext('2d')
+
+    var d = [
+        [3, 4, 5, 6, 7, 6, 5, 4, 3],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 2, 0, 0, 0, 0, 0, 2, 0],
+        [1, 0, 1, 0, 1, 0, 1, 0, 1],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [8, 0, 8, 0, 8, 0, 8, 0, 8],
+        [0, 9, 0, 0, 0, 0, 0, 9, 0],
+        [0, [2, 4], [13, 12, 1], [13, 12, 1, 2], [3, 12, 1, 2, 8], [13, 12, 1, 2, 3, 4], [14, 1, 2, 3, 4, 5, 6], 0, 0],
+        [10, 11, 12, 13, 14, 13, 12, 11, 10]
+    ];
+    var names = [null,
+        "卒", "砲", "馬", "車", "象", "士", "將",
+        "兵", "炮", "傌", "俥", "相", "仕", "帥",
+    ];
+    //底色
+    ctx.fillStyle = "rgb(228, 180, 141)"
+    ctx.fillRect(0, 0, 600, 600);
+
+    var start_x = 100,
+        start_y = 75,
+        inc = 50,
+        text = 30,
+        count_x = 9,
+        count_y = 10,
+        end_x = start_x + count_x * inc - inc,
+        end_y = start_y + count_y * inc - inc;
+    //特殊线条
+    ctx.fillStyle = 'black';
+    ctx.beginPath();
+    ctx.moveTo(start_x, end_y);//左下
+    ctx.lineTo(start_x, start_y);//左上
+    ctx.lineTo(start_x + 3 * inc, start_y);//3,0
+    ctx.lineTo(start_x + 5 * inc, start_y + 2 * inc);//5,2
+    ctx.lineTo(start_x + 3 * inc, start_y + 2 * inc);//3,2
+    ctx.lineTo(start_x + 5 * inc, start_y);//5,0
+    ctx.lineTo(end_x, start_y);//右上
+    ctx.lineTo(end_x, end_y);//右下
+    ctx.lineTo(start_x + 5 * inc, end_y);//5，9
+    ctx.lineTo(start_x + 3 * inc, start_y + 7 * inc);//3，7
+    ctx.lineTo(start_x + 5 * inc, start_y + 7 * inc);//5，7
+    ctx.lineTo(start_x + 3 * inc, end_y);//3，9
+    ctx.closePath();
+    ctx.stroke();
+
+    ctx.font = "25px Sans-serif"
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.fillText(
+        "楚　河　　　　　漢　界",
+        (start_x + end_x) / 2, (start_y + end_y) / 2
+    );
+
+    for (var i = 0; i < count_x; i++) {
+        //横向文字
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+        ctx.fillText(i, start_x + i * inc, end_y + text);
+        ctx.textBaseline = "bottom";
+        ctx.fillText(i, start_x + i * inc, start_y - text);
+
+        //竖直线条
+        ctx.beginPath();
+        ctx.moveTo(start_x + i * inc, start_y);
+        ctx.lineTo(start_x + i * inc, start_y + 4 * inc);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(start_x + i * inc, start_y + 5 * inc);
+        ctx.lineTo(start_x + i * inc, end_y);
+        ctx.closePath();
+        ctx.stroke();
+    }
+
+    for (var i = 0; i < count_y; i++) {
+        //竖向文字
+        ctx.textBaseline = "middle";
+        ctx.textAlign = "end";
+        ctx.fillText(i, start_x - text, start_y + i * inc);
+        ctx.textAlign = "start";
+        ctx.fillText(i, end_x + text, start_y + i * inc);
+
+        //横直线条
+        ctx.beginPath();
+        ctx.moveTo(start_x, start_y + i * inc);
+        ctx.lineTo(end_x, start_y + i * inc);
+        ctx.closePath();
+        ctx.stroke();
+    }
+
+    //绘制棋子
+    var word = [0, 0, 0, 1, 2, 2, 3, 3];
+    var size = [26, 26, 22, 19, 19, 15, 15, 15];
+    ctx.strokeStyle = "rgba(0,0,0,0.4)";
+    ctx.lineWidth = 3;
+    for (var yi = 0; yi < d.length; yi++) {
+        var yarr = d[yi],
+            this_y = start_y + yi * inc;
+        for (var xi = 0; xi < yarr.length; xi++) {
+            var this_x = start_x + xi * inc,
+                thisdata = yarr[xi];
+            if (thisdata == 0) continue;
+            ctx.beginPath();
+
+            ctx.fillStyle = (
+                (typeof thisdata === "number" && thisdata >= 8) ||
+                (typeof thisdata === "object" && thisdata[0] >= 8)
+            ) ? 'darkred' : 'black';
+            ctx.arc(this_x, this_y, 24, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.textBaseline = "middle";
+            ctx.textAlign = "center";
+            ctx.fillStyle = 'white';
+            ctx.font = "25px Sans-serif"
+            if (typeof thisdata === "object") {
+                ctx.font = size[thisdata.length] + "px Sans-serif"
+                var txt = thisdata.map(function (x) { return names[x]; }).join("");
+                if (thisdata.length >= 3) {
+                    if (thisdata.length >= 7) {
+                        ctx.font = size[2] + "px Sans-serif"
+                        ctx.fillText(names[thisdata[0]] + "全", this_x, this_y);
+                        continue;
+                    }
+
+                    ctx.strokeText(txt.substr(0, word[thisdata.length]), this_x, this_y - 9);
+                    ctx.strokeText(txt.substr(word[thisdata.length]), this_x, this_y + 9);
+                    ctx.fillText(txt.substr(0, word[thisdata.length]), this_x, this_y - 9);
+                    ctx.fillText(txt.substr(word[thisdata.length]), this_x, this_y + 9);
+                } else {
+                    ctx.fillText(txt, this_x, this_y);
+                }
+            } else {
+                ctx.fillText(names[thisdata], this_x, this_y);
+            }
+
+        }
+    }
+
+    return "[CQ:image,file=" + canvas.toDataURL() + "]"
+}
+
+const server = http.createServer(
+    (req, res) => {
+        let data = '';
+        req.on('data', (chunk) => {
+            data += chunk;
+        })
+        req.on('end', async () => {
+            var data = JSON.parse(data);
+            if (data.post_type == "message") {
+                try {
+                    var reply_text = await reply_from(data);
+                    return res.end(JSON.stringify({ "reply": reply_text })
+                    )
+                } catch (error) {
+                    console.log(error);
+                    res.end();
+                }
+            }
+            res.end();
+        });
+    }
+)
 server.listen(80);
-restart_time = Date.now();
-//clearInterval(server_saved);
-//server_saved=setInterval(save_server,60000);
-//clearInterval(cell_turn_move);
-//cell_turn_move=setInterval(do_turn_cell,5000);
-//https://cqhttp.cc/docs/
-//sm_match_ID=setInterval(sm匹配,Math.ceil((sm_match_speed*1000)/sm_rank_list.length));
-//clearInterval(sm_match_ID);
-//sm_clear_ID=setInterval(sm_clear_log,600000);
-//clearInterval(sm_clear_ID);
-//sm_clear_ID=setInterval(sm_restart,60000);
-//clearInterval(sm_clear_ID);
-
-jmm_bad_ID = setInterval(jmm_bad_func, 30000);
-
-//clearInterval(jmm_bad_ID);
-
-auto_restart_ID = setInterval(check_restart, 300000);
-
-//clearInterval(auto_restart_ID);
-//mikase_ID=setInterval(()=>{http.get("http://127.0.0.1:5700/send_group_msg?group_id=534360827&&message=投票 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色");},1000)
-//clearInterval(mikase_ID);
