@@ -163,8 +163,8 @@ async function get_data(url) {
 }
 
 
-xiangqi = new Object();
-xiagnqi.data = {
+global.xiangqi = {}
+global.xiagnqi.data = {
     0: [
         [3, 4, 5, 6, 7, 6, 5, 4, 3],
         [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -179,19 +179,19 @@ xiagnqi.data = {
     ]
 };
 
-xiangqi.black = function (fx, fy, tx, ty) {
+global.xiangqi.black = function (fx, fy, tx, ty) {
     if (!xiangqi.data.hasOwnProperty(group_id)) {
         xiangqi.data[group_id] = xiangqi.data[0];
     }
 }
 
-xiangqi.red = function (fx, fy, tx, ty) {
+global.xiangqi.red = function (fx, fy, tx, ty) {
     if (!xiangqi.data.hasOwnProperty(group_id)) {
         xiangqi.data[group_id] = xiangqi.data[0];
     }
 }
 
-xiangqi.show = function (group_id) {
+global.xiangqi.show = function (group_id) {
     const canvas = createCanvas(600, 600)
     const ctx = canvas.getContext('2d')
     if (!xiangqi.data.hasOwnProperty(group_id)) {
@@ -355,6 +355,6 @@ async function reply_from(data) {
     if (data.post_type != "message") { return; }
     if (data.raw_message.startsWith("象棋")) {
         if (data.sub_type != "group") { return "只能群聊" }
-        return xiangqi.show(data.group_id);
+        return global.xiangqi.show(data.group_id);
     }
 }
