@@ -355,7 +355,7 @@ server.listen(80);
 async function reply_from(data) {
     if (data.post_type != "message") { return; }
     if (data.raw_message.startsWith("象棋")) {
-        if (data.sub_type != "group") { return "只能群聊" }
+        //if (data.sub_type != "group") { return "只能群聊" }
         return xiangqi.show(data.group_id);
     }
 }
