@@ -49,7 +49,7 @@ const server = http.createServer(
             data += chunk;
         })
         req.on('end', async () => {
-            var data = await JSON.parse(data) || false;
+            var data = (data) ? false : JSON.parse(data);
             if (data && data.post_type == "message") {
                 try {
                     var reply_text = await reply_from(data);
