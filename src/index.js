@@ -137,6 +137,16 @@ auto_restart_ID = setInterval(check_restart, 300000);
 //mikase_ID=setInterval(()=>{http.get("http://127.0.0.1:5700/send_group_msg?group_id=534360827&&message=投票 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色 咪咔色");},1000)
 //clearInterval(mikase_ID);
 */
+
+async function reply_text(text, data) {
+    return get_data(
+        "http://127.0.0.1/" +
+        (data.message_type === "group"
+            ? "send_group_msg?group_id=" + data.group_id
+            : "send_private_msg?user_id=" + data.user_id)
+        + "&message=" + encodeURIComponent(text)
+    );
+}
 async function get_data(url) {
     var parsedData;
     await new Promise((resolve) => {
@@ -413,12 +423,12 @@ async function reply_from(data) {
     }
     */
     if (data.raw_message.startsWith("gb")) {
-        var cmd = `/home/lede/gb "${data.raw_message.substr(2).trim()}"`;
+        var cmd = `/ home / lede / gb "${data.raw_message.substr(2).trim()}"`;
         return process.exec(cmd, function (error, stdout, stderr) {
             //console.log("error:" + error);
             //console.log("stdout:" + stdout);
             //console.log("stderr:" + stderr);
-            return stdout
+            reply_text(stdout, data);
         });
 
     }
