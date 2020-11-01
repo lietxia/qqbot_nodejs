@@ -6,13 +6,13 @@ const server_port = 8082;
 const server_url = "http://127.0.0.1:" + server_port + "/";
 
 async function reply_text(text, fmtdata) {
-    return get_data(
-        server_url +
+    var url = server_url +
         (fmtdata.message_type === "group"
             ? "send_group_msg?group_id=" + fmtdata.group_id
             : "send_private_msg?user_id=" + fmtdata.user_id)
-        + "&message=" + encodeURIComponent(text)
-    );
+        + "&message=" + encodeURIComponent(text);
+    console.log("posturl:" + url);
+    return get_data(url);
 }
 async function get_data(url) {
     var fmtdata, row_data = "";
