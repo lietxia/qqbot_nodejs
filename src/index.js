@@ -22,7 +22,7 @@ async function get_data(url) {
                 res.setEncoding('utf8');
                 res.on('data', (chunk) => { row_data += chunk; });
                 res.on('end', () => {
-                    fmtdata = (row_data) ? JSON.parse(row_data) : false;
+                    fmtdata = (row_data) ? JSON.parse(row_data) : {};
                     resolve(fmtdata);
                 });
             });
@@ -31,7 +31,7 @@ async function get_data(url) {
                 res.setEncoding('utf8');
                 res.on('data', (chunk) => { row_data += chunk; });
                 res.on('end', () => {
-                    fmtdata = (row_data) ? JSON.parse(row_data) : false;
+                    fmtdata = (row_data) ? JSON.parse(row_data) : {};
                     resolve(fmtdata);
                 });
             });
