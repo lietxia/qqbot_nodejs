@@ -5,12 +5,12 @@ var process = require('child_process');
 const server_port = 8082;
 const server_url = "http://127.0.0.1:" + server_port + "/";
 
-async function reply_text(text, data) {
+async function reply_text(text, fmtdata) {
     return get_data(
         server_url +
-        (data.message_type === "group"
-            ? "send_group_msg?group_id=" + data.group_id
-            : "send_private_msg?user_id=" + data.user_id)
+        (fmtdata.message_type === "group"
+            ? "send_group_msg?group_id=" + fmtdata.group_id
+            : "send_private_msg?user_id=" + fmtdata.user_id)
         + "&message=" + encodeURIComponent(text)
     );
 }
@@ -72,7 +72,7 @@ async function reply_from(fmtdata) {
             console.log("error:" + error);
             console.log("stdout:" + stdout);
             console.log("stderr:" + stderr);
-            reply_text(stdout, data);
+            reply_text(stdout, fmtdata);
         });
 
     }
