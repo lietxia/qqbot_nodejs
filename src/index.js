@@ -2,8 +2,10 @@ const http = require('http');
 const fs = require('fs');
 var process = require('child_process');
 
+/*
 const { registerFont, createCanvas, loadImage } = require('canvas')
 registerFont('SourceHanSansSC-Regular-min.ttf', { family: 'SourceHanSansSC' })
+*/
 
 /*
 function read(f) {
@@ -163,7 +165,7 @@ async function get_data(url) {
     return parsedData;
 }
 
-
+/*
 var xiangqi = {
     data: {
         0: [
@@ -355,7 +357,7 @@ xiangqi.show = function (group_id) {
     }
     return "[CQ:image,file=base64://" + canvas.toDataURL().substr(22) + "]"
 }
-
+*/
 const server = http.createServer(
     (req, res) => {
         var data = '';
@@ -381,6 +383,7 @@ const server = http.createServer(
 server.listen(80);
 async function reply_from(data) {
     if (data.post_type != "message") { return; }
+    /*
     if (data.raw_message.startsWith("开始功能棋") ||
         data.raw_message.startsWith("開始功能棋")) {
         //if (data.sub_type != "group") { return "只能群聊" }
@@ -408,6 +411,7 @@ async function reply_from(data) {
         data.raw_message.startsWith("移動")) {
         return xiangqi.move(data.raw_message, data.group_id);
     }
+    */
     if (data.raw_message.startsWith("gb")) {
         var cmd = `/home/lede/gb "${data.raw_message.substr(2).trim()}"`;
         return process.exec(cmd, function (error, stdout, stderr) {
