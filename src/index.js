@@ -15,41 +15,38 @@ async function reply_text(text, fmtdata) {
     );
 }
 async function get_data(url) {
-    var parsedData;
+    var fmtdata, row_data = "";
     await new Promise((resolve) => {
         if (url.startsWith("https"))
             https.get(url, (res) => {
                 res.setEncoding('utf8');
-                let rawData = '';
-                res.on('data', (chunk) => { rawData += chunk; });
+                res.on('data', (chunk) => { row_data += chunk; });
                 res.on('end', () => {
-                    parsedData = JSON.parse(rawData); console.log(JSON.stringify(parsedData));
-                    resolve(parsedData);
+                    fmtdata = (row_data) ? JSON.parse(row_data) : false;
+                    resolve(fmtdata);
                 });
             });
         else
             http.get(url, (res) => {
                 res.setEncoding('utf8');
-                let rawData = '';
-                res.on('data', (chunk) => { rawData += chunk; });
+                res.on('data', (chunk) => { row_data += chunk; });
                 res.on('end', () => {
-                    parsedData = JSON.parse(rawData);
-                    console.log(JSON.stringify(parsedData));
-                    resolve(parsedData);
+                    fmtdata = (row_data) ? JSON.parse(row_data) : false;
+                    resolve(fmtdata);
                 });
             });
     });
-    return parsedData;
+    return fmtdata;
 }
 
 const server = http.createServer(
     (req, res) => {
-        var row_data = '';
+        var row_data = '', fmtdata;
         req.on('data', (chunk) => {
             row_data += chunk;
         })
         req.on('end', async () => {
-            var fmtdata = (row_data) ? JSON.parse(row_data) : false;
+            fmtdata = (row_data) ? JSON.parse(row_data) : false;
             if (fmtdata && fmtdata.post_type == "message") {
                 try {
                     var reply_text = await reply_from(fmtdata);
