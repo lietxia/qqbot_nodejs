@@ -64,12 +64,16 @@ async function reply_from(fmtdata) {
     if (fmtdata.post_type != "message") { return; }
 
     if (fmtdata.raw_message.startsWith("gb")) {
-        var cmd = `/home/lede/gb "${fmtdata.raw_message.substr(2).trim()}"`;
+        var cmd = `/home/lede/gb "${fmtdata.raw_message
+            .substr(2).trim()
+            .replace(/&#91;/g, "[")
+            .replace(/&#93;/g, "]")}"`;
         return process.exec(cmd, function (error, stdout, stderr) {
             console.log("error:" + error);
             console.log("stdout:" + stdout);
             console.log("stderr:" + stderr);
-            reply_text(stdout, fmtdata);
+            if (stderr != "") reply_text(stderr, fmtdata);
+            if (stdout != "") reply_text(stdout, fmtdata);
         });
 
     }
