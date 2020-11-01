@@ -2,11 +2,11 @@ const http = require('http');
 const fs = require('fs');
 var process = require('child_process');
 
-const server_port = 8082;
-const server_url = "http://127.0.0.1:" + server_port + "/";
+const this_port = 8082;
+const post_url = "http://127.0.0.1:5700/";
 
 async function reply_text(text, fmtdata) {
-    var url = server_url +
+    var url = post_url +
         (fmtdata.message_type === "group"
             ? "send_group_msg?group_id=" + fmtdata.group_id
             : "send_private_msg?user_id=" + fmtdata.user_id)
@@ -59,7 +59,7 @@ const server = http.createServer(
         });
     }
 )
-server.listen(server_port);
+server.listen(this_port);
 async function reply_from(fmtdata) {
     if (fmtdata.post_type != "message") { return; }
 
