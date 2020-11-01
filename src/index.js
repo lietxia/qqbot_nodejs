@@ -1,5 +1,6 @@
 const http = require('http');
 const fs = require('fs');
+var process = require('child_process');
 
 const { registerFont, createCanvas, loadImage } = require('canvas')
 registerFont('SourceHanSansSC-Regular-min.ttf', { family: 'SourceHanSansSC' })
@@ -406,5 +407,15 @@ async function reply_from(data) {
         data.raw_message.startsWith("移动") ||
         data.raw_message.startsWith("移動")) {
         return xiangqi.move(data.raw_message, data.group_id);
+    }
+    if (data.raw_message.startsWith("gb")) {
+        var cmd = `/home/lede/gb "${data.raw_message.substr(2).trim()}"`;
+        return process.exec(cmd, function (error, stdout, stderr) {
+            //console.log("error:" + error);
+            //console.log("stdout:" + stdout);
+            //console.log("stderr:" + stderr);
+            return stdout
+        });
+
     }
 }
