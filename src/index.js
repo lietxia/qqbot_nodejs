@@ -1,7 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 var process = require('child_process');
-const server_url = "http://127.0.0.1:8081/";
+
+const server_port = 8082;
+const server_url = "http://127.0.0.1:" + server_port + "/";
 
 async function reply_text(text, data) {
     return get_data(
@@ -62,7 +64,7 @@ const server = http.createServer(
         });
     }
 )
-server.listen(8082);
+server.listen(server_port);
 async function reply_from(data) {
     if (data.post_type != "message") { return; }
 
