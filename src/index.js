@@ -44,32 +44,30 @@ async function get_data(url) {
 
 const server = http.createServer(
     (req, res) => {
-        var data = '';
+        var row_data = '';
         req.on('data', (chunk) => {
-            data += chunk;
+            row_data += chunk;
         })
         req.on('end', async () => {
-            var data = (data) ? JSON.parse(data) : false;
-            if (data && data.post_type == "message") {
+            var fmtdata = (row_data) ? JSON.parse(row_data) : false;
+            if (fmtdata && fmtdata.post_type == "message") {
                 try {
-                    var reply_text = await reply_from(data);
-                    return res.end(JSON.stringify({ "reply": reply_text })
-                    )
-                } catch (error) {
-                    console.log(error);
-                    res.end();
-                }
+                    var reply_text = await reply_from(fmtdata);
+                    if (reply_text != "") {
+                        return res.end(JSON.stringify({ "reply": reply_text }));
+                    }
+                } catch (error) { console.log(error); }
             }
             res.end();
         });
     }
 )
 server.listen(server_port);
-async function reply_from(data) {
-    if (data.post_type != "message") { return; }
+async function reply_from(fmtdata) {
+    if (fmtdata.post_type != "message") { return; }
 
-    if (data.raw_message.startsWith("gb")) {
-        var cmd = `/home/lede/gb "${data.raw_message.substr(2).trim()}"`;
+    if (fmtdata.raw_message.startsWith("gb")) {
+        var cmd = `/home/lede/gb "${fmtdata.raw_message.substr(2).trim()}"`;
         return process.exec(cmd, function (error, stdout, stderr) {
             console.log("error:" + error);
             console.log("stdout:" + stdout);
