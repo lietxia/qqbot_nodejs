@@ -1,10 +1,50 @@
+# Dependencies
+node_modules/
+
+# Config with sensitive data (passwords, tokens)
+config.json
+
+# Windows Node.js runtime binaries
+node_bin/
+
+# OS files
 Thumbs.db
 ehthumbs.db
 Desktop.ini
 .DS_Store
-.zip
 ._*
-node_modules
-.vscode
-.exe
-.pdf
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids.txt
+
+# Environment
+.env
+.env.*
+
+# Compressed files
+*.zip
+
+# Windows executables
+*.exe
+
+# PDF (large binary)
+*.pdf
+
+# Python cache (project has .py scripts)
+__pycache__/
+*.pyc
+
+# OpenCode internal
+.opencode/
+patch_opencode.py
