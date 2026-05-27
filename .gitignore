@@ -1,9 +1,6 @@
 # Dependencies
 node_modules/
 
-# Config with sensitive data (passwords, tokens)
-config.json
-
 # Windows Node.js runtime binaries
 node_bin/
 
@@ -25,21 +22,11 @@ Desktop.ini
 *.log
 logs/
 
-# Runtime data
-pids.txt
-
-# Environment
-.env
-.env.*
-
 # Compressed files
 *.zip
 
 # Windows executables
 *.exe
-
-# PDF (large binary)
-*.pdf
 
 # Python cache (project has .py scripts)
 __pycache__/
