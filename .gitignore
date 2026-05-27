@@ -28,6 +28,12 @@ logs/
 # Windows executables
 *.exe
 
+# Large binary
+*.pdf
+
+# Runtime data
+pids.txt
+
 # Python cache (project has .py scripts)
 __pycache__/
 *.pyc
